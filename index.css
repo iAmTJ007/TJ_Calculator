@@ -1,3 +1,6 @@
+body{
+    /*background-color: gray;*/
+}
 .grid{
     
     display: grid;
@@ -10,6 +13,8 @@
     grid-area: display;
     color: white;
     background-color: black;
+    border: 2rem;
+    margin: 2rem;
 }
 #clear{
     grid-area: clear;
