@@ -1,0 +1,19 @@
+.grid{
+    
+    display: grid;
+    grid-template-columns: 8rem 8rem 8rem 8rem;
+    grid-template-areas: "display display display display"
+                         "clear clear del del";
+    grid-gap: 3px;                     
+}
+.display{
+    grid-area: display;
+    color: white;
+    background-color: black;
+}
+#clear{
+    grid-area: clear;
+}
+#delete{
+    grid-area: del;
+}
