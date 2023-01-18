@@ -3,9 +3,9 @@ const operand=document.querySelectorAll('[data-operand]')
 const equalskey=document.querySelector('[data-equal]')
 const backspace=document.querySelector('.delete')
 
-backspace.addEventListener('click',()=>{
-const up_disp=document.querySelector('.up')
-const sliced_disp=up_disp.textContent.slice(0,-1)
+backspace.addEventListener('click',()=>{     //slice from 1st to second last element of display and replace it
+const up_disp=document.querySelector('.up') //with original display such that last element is deleted
+const sliced_disp=up_disp.textContent.slice(0,-1) //but dont do it when length of display is 1
 if(up_disp.textContent.length>1)up_disp.textContent=sliced_disp 
 else if(up_disp.textContent.length==1)up_disp.textContent='0'  
              
