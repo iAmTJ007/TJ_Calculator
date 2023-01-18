@@ -15,11 +15,6 @@ operand.forEach((button)=>{
 
 function up_display(value){
     const up_container=document.querySelector('.up')  // displays value
-    if(value in number && up_container.textContent==0)
-    {
-        up_container.textContent=''
-        up_container.append(value)
-    }    
-    else up_container.append(value)
-    
+    if(value in number && up_container.textContent==0)up_container.textContent=value
+    else up_container.append(value)    
 }
