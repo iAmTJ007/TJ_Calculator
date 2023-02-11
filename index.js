@@ -24,9 +24,17 @@ number.forEach((button)=>{
 })
 operand.forEach((button)=>{
     button.addEventListener('click',()=>{
+        if(op==0){      //if operator never used then obviously it is n1 so store it
         const up_container=document.querySelector('.up')
          n1=up_container.textContent
          op=button.textContent
+        }
+        else if(op!=0){   // if operator used already then calculate previous 
+            let a=calculate(n1,op,n2)
+            op=button.textContent
+            n2=''
+            n1=a
+        }
         up_display(button.textContent) // it will append in an up display for each operand
     })
 })
@@ -47,8 +55,21 @@ function up_display(value){
 }
 function calculate(n1,op,n2){
     const up_container=document.querySelector('.up')
-    if(op=='+')up_container.textContent=parseInt(n1)+parseInt(n2)
-    else if(op=='-')up_container.textContent=parseInt(n1)-parseInt(n2)
-    else if(op=='x')up_container.textContent=parseInt(n1)*parseInt(n2)
-    else if(op=='/')up_container.textContent=parseInt(n1)/parseInt(n2)
+    if(op=='+'){
+        up_container.textContent=parseInt(n1)+parseInt(n2)
+        return parseInt(n1)+parseInt(n2)
+       
+    }
+    else if(op=='-'){
+        up_container.textContent=parseInt(n1)-parseInt(n2)
+        return parseInt(n1)-parseInt(n2)
+    }
+    else if(op=='x'){
+      up_container.textContent=parseInt(n1)-parseInt(n2)
+      return parseInt(n1)-parseInt(n2)
+    }
+    else if(op=='/'){
+        up_container.textContent=parseInt(n1)/parseInt(n2)
+        return parseInt(n1)/parseInt(n2)
+    }
 }
